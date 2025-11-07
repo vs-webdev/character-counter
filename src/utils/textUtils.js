@@ -5,3 +5,5 @@ export const getCharacterCount = (text, isExcludeSpaces) => isExcludeSpaces
 export const getWordCount = (text) => text.trim()
   .split(/\s+/)
   .filter(Boolean).length
+
+export const getSentenceCount = (text) => text.match(/[^.!?]+[.!?]+/g)?.length || 0
