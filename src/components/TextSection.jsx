@@ -1,11 +1,9 @@
-import { useMemo, useState } from "react"
+import { useState } from "react"
 import { useText } from "../context/TextContext"
-import { getWordCount } from "../utils/textUtils"
 
 const TextSection = () => {
-  const {text, setText, isExcludeSpace, setIsExcludeSpace, characterCount} = useText()
+  const {text, setText, isExcludeSpace, setIsExcludeSpace, characterCount, wordCount} = useText()
   const [charLimit, setCharLimit] = useState({state: false, value: 14})
-  const wordCount = useMemo(() => getWordCount(text), [text])
   const warning = charLimit.state && characterCount > charLimit.value
   const readingTIme = Math.ceil(wordCount / 200)
 
