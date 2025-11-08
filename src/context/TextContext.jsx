@@ -1,5 +1,5 @@
 import { createContext, useContext, useMemo, useState } from "react"
-import { getCharacterCount, getSentenceCount, getWordCount } from "../utils/textUtils"
+import { getCharacterCount, getLetterDensity, getSentenceCount, getWordCount } from "../utils/textUtils"
 
 const TextContext = createContext(null)
 
@@ -9,6 +9,7 @@ export const TextProvider = ({children}) => {
   const characterCount = useMemo(() => getCharacterCount(text, isExcludeSpace), [text, isExcludeSpace])
   const wordCount = useMemo(() => getWordCount(text), [text])
   const sentenceCount = useMemo(() => getSentenceCount(text), [text])
+  const letterDensity = useMemo(() => getLetterDensity(text), [text])
   
   const value = {
     text,
@@ -16,6 +17,7 @@ export const TextProvider = ({children}) => {
     wordCount,
     sentenceCount,
     characterCount,
+    letterDensity,
     isExcludeSpace,
     setIsExcludeSpace,
   }
