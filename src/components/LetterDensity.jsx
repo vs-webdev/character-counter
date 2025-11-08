@@ -3,8 +3,8 @@ import { useText } from "../context/TextContext"
 
 const LetterDensity = () => {
   const {letterDensity} = useText()
-  const [seeMore, setSeeMore] = useState(false)
-  const displayCount = seeMore ? letterDensity.length : 5
+  const [showMore, setShowMore] = useState(false)
+  const displayCount = showMore ? letterDensity.length : 5
 
   return (
     <div className="w-full text-left mt-10">
@@ -31,12 +31,14 @@ const LetterDensity = () => {
               }
             </div>
 
-            <button 
-              className="cursor-pointer"
-              onClick={() => setSeeMore(prev => !prev)}
-              >
-              {`${seeMore ? "See More" : "See Less"}`}
-            </button>
+            {letterDensity.length > 5 && (
+              <button 
+                className="cursor-pointer"
+                onClick={() => setShowMore(prev => !prev)}
+                >
+                {`${showMore ? "See Less" : "See More"}`}
+              </button>
+            )}
           </div>
         )
       }
