@@ -11,7 +11,7 @@ const TextSection = () => {
     <div className='w-full mt-12'>
       <textarea
         placeholder='Start typing here... (or paste your text)'
-        className='w-full h-50 border resize-none text-xl/8 p-5 rounded-xl'
+        className='w-full h-50 border-[2px] outline-none border-[var(--text-area-border)] resize-none text-xl/8 text-[var(--color-text-area)] bg-[var(--bg-text-area)] p-5 rounded-xl'
         onChange={(e) => setText(e.target.value)}
         value={text}
       ></textarea>
@@ -32,11 +32,11 @@ const TextSection = () => {
               <input 
                 type="checkbox" 
                 id="exclude" 
-                className="mr-3 appearance-none w-4 h-4 rounded-sm checked:bg-neutral-500 border cursor-pointer"
+                className="mr-3 appearance-none w-4 h-4 rounded-sm checked:bg-neutral-500 border border-[var(--color-secondary-text)] cursor-pointer"
                 checked={isExcludeSpace}
                 onChange={() => setIsExcludeSpace(prev => !prev)}
               />
-              <span className="select-none">Exclude Spaces</span>
+              <span className="select-none text-[var(--color-secondary-text)]">Exclude Spaces</span>
             </label>
           </div>
 
@@ -46,11 +46,11 @@ const TextSection = () => {
               <input 
                 type="checkbox" 
                 id="char_limit" 
-                className="mr-3 appearance-none w-4 h-4 rounded-sm checked:bg-neutral-500 border cursor-pointer"
+                className="mr-3 appearance-none w-4 h-4 rounded-sm  border border-[var(--color-secondary-text)] checked:bg-neutral-500 border cursor-pointer"
                 checked={charLimit.state}
                 onChange={() => setCharLimit(prev => ({ ...prev, state: !prev.state}))}
               />
-              <span className="select-none">Set Character Limit</span>
+              <span className="select-none text-[var(--color-secondary-text)]">Set Character Limit</span>
             </label>
             {charLimit.state && (
               <input
@@ -65,7 +65,7 @@ const TextSection = () => {
 
         {/* Reading Time */}
         <div className="flex">
-          <span>Approx. Reading Time: {readingTIme > 0 ? "<" : ""}{readingTIme} {readingTIme > 1 ? "minutes" : "minute"}</span>
+          <span className="text-[var(--color-secondary-text)]">Approx. Reading Time: {readingTIme > 0 ? "<" : ""}{readingTIme} {readingTIme > 1 ? "minutes" : "minute"}</span>
         </div>
       </div>
     </div>

@@ -11,7 +11,7 @@ function App() {
       <Header />
       <main className='flex flex-col items-center w-full'>
         <div className='max-w-lg'>
-          <h1 className='text-4xl/10 sm:text-6xl/16 font-bold'>Analyze your text in real-time.</h1>
+          <h1 className='text-4xl/10 text-[var(--color-primary-text)] sm:text-6xl/16 font-bold'>Analyze your text in real-time.</h1>
         </div>
         <TextSection />
         <StatsSection />

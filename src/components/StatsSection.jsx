@@ -19,7 +19,7 @@ const StatsSection = () => {
         {
           STATS_CONFIG.map((stat,ind) => (
             <li key={ind}
-              className={`border rounded-xl w-full px-6 py-4 text-left text-neutral-900 bg-no-repeat bg-[115%_center] bg-contain`}
+              className={`rounded-xl w-full px-6 py-4 text-left text-neutral-900 bg-no-repeat bg-[115%_center] bg-contain`}
               style={{
                 backgroundImage: `url("${stat.image}")`,
                 backgroundColor: stat.bgColor,

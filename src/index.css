@@ -7,7 +7,15 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+
+  /* Custom colors */
+  --color-primary-text: #12131a;
+  --color-secondary-text: #2a2b37;
+  --bg-theme: #f2f2f7;
+  --bg-text-area: #f2f2f7;
+  --text-area-border: #e4e4ef;
+  --color-text-area: #161729;
+  --bg-progress-bar: #f2f2f7;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -18,9 +26,23 @@
 body {
   display: flex;
   place-items: center;
-  margin: 0;
-  background-image: url("./assets/images/bg-dark-theme.png");
   width: 100%;
+  margin: 0;
+  background-image: url("./assets/images/bg-light-theme.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+body.dark {
+  background-image: url("./assets/images/bg-dark-theme.png");
+  --color-primary-text: #f2f2f7;
+  --color-secondary-text: #eaeaef;
+  --bg-theme: #21222c;
+  --bg-text-area: #21222c;
+  --text-area-border: #2a2b37;
+  --color-text-area: #e4e4ef;
+  --bg-progress-bar: #21222c;
 }
 
 input[type=number]::-webkit-outer-spin-button,

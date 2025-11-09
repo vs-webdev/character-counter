@@ -13,11 +13,11 @@ const Header = () => {
           className='h-8 sm:h-10'
         />
       </div>
-      <button className='bg-neutral-700 p-2 sm:p-2.5 rounded-md'
+      <button className='bg-[var(--bg-theme)] p-2 sm:p-2.5 rounded-md cursor-pointer'
         onClick={toggleTheme}
       >
-        <img src={theme === 'light' ? sun : moon} alt="Theme" 
-          className='h-4'
+        <img src={theme === 'light' ? moon : sun} alt="Theme" 
+          className='h-5'
         />
       </button>
     </div>
