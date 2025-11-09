@@ -15,7 +15,7 @@ const StatsSection = () => {
 
   return (
     <div className="w-full mt-8">
-      <ul className="flex justify-between w-full gap-4">
+      <ul className="flex flex-col sm:flex-row sm:justify-between w-full gap-4">
         {
           STATS_CONFIG.map((stat,ind) => (
             <li key={ind}
@@ -25,7 +25,7 @@ const StatsSection = () => {
                 backgroundColor: stat.bgColor,
               }}
             >
-              <p className="text-7xl font-bold mb-2">{stat.value}</p>
+              <p className="text-6xl sm:text-7xl font-bold mb-2">{stat.value}</p>
               <p className="text-lg">{stat.title}</p>
             </li>
           ))

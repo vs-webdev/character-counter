@@ -19,9 +19,12 @@ const LetterDensity = () => {
                 letterDensity.slice(0, displayCount).map(({letter, count, percent}) => (
                   <div key={letter} className="flex justify-between items-center w-full">
                     <span className="uppercase w-5">{letter}</span>
-                    <div className="border w-full h-4 rounded-full mx-12 overflow-hidden">
+
+                    {/* Progress bar */}
+                    <div className="border w-full h-4 rounded-full mx-8 sm:mx-12 overflow-hidden">
                       <div className={`h-full bg-[#d3a0fa] transition-all duration-300 ease-out`} style={{width: `${percent}%`}}></div>
                     </div>
+
                     <div className="w-20 text-right">
                       <span className="mr-2">{count}</span>
                       <span className="whitespace-nowrap">({percent.toFixed(0)}%)</span>

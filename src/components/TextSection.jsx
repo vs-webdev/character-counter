@@ -23,8 +23,8 @@ const TextSection = () => {
         </div>
       )}
 
-      <div className="flex items-center justify-between">
-        <div className="flex items-center mt-2 h-10">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between">
+        <div className="flex flex-col sm:flex-row sm:items-center mt-2 space-y-2 h-18 sm:h-10">
 
           {/* Exclude Spaces */}
           <div className="mr-8">
@@ -41,7 +41,7 @@ const TextSection = () => {
           </div>
 
           {/* Set Character Limit */}
-          <div className="flex">
+          <div className="flex h-8">
             <label htmlFor="char_limit" className="flex items-center mr-4">
               <input 
                 type="checkbox" 
@@ -64,7 +64,7 @@ const TextSection = () => {
         </div>
 
         {/* Reading Time */}
-        <div>
+        <div className="flex">
           <span>Approx. Reading Time: {readingTIme > 0 ? "<" : ""}{readingTIme} {readingTIme > 1 ? "minutes" : "minute"}</span>
         </div>
       </div>
