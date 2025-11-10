@@ -18,13 +18,13 @@ const TextSection = () => {
 
       {/* Exceed Character Limit */}
       {warning && (
-        <div>
-          <span>You Exceeded character Limit</span>
+        <div className="w-full flex items-center gap-2 mt-2">
+          <span className="text-[#fe8159] text-left block w-full">You Exceeded character Limit</span>
         </div>
       )}
 
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between">
-        <div className="flex flex-col sm:flex-row sm:items-center mt-2 space-y-2 h-18 sm:h-10">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between mt-2 gap-2">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-center gap-3">
 
           {/* Exclude Spaces */}
           <div className="mr-8">
@@ -55,7 +55,7 @@ const TextSection = () => {
             {charLimit.state && (
               <input
                 type="number"
-                className="border text-center py-1 w-15 rounded-sm"
+                className="border border-[var(--color-secondary-text)] text-[var(--color-secondary-text)] text-center py-1 w-15 rounded-sm"
                 value={charLimit.value}
                 onChange={e => setCharLimit(prev => ({...prev, value: e.target.value}))}
               />
