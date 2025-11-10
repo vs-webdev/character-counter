@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useText } from "../context/TextContext"
+import infoIcon from "../assets/images/icon-info.svg"
 
 const TextSection = () => {
   const {text, setText, isExcludeSpace, setIsExcludeSpace, characterCount, wordCount} = useText()
@@ -11,7 +12,7 @@ const TextSection = () => {
     <div className='w-full mt-12'>
       <textarea
         placeholder='Start typing here... (or paste your text)'
-        className='w-full h-50 border-[2px] outline-none border-[var(--text-area-border)] resize-none text-xl/8 text-[var(--color-text-area)] bg-[var(--bg-text-area)] p-5 rounded-xl'
+        className='w-full h-50 border-[2px] outline-none border-[var(--text-area-border)] focus:border-[#d3a0fa] focus:shadow-[0_0_10px_0_#d3a0fa] resize-none text-xl/8 text-[var(--color-text-area)] bg-[var(--bg-text-area)] p-5 rounded-xl'
         onChange={(e) => setText(e.target.value)}
         value={text}
       ></textarea>
@@ -19,6 +20,7 @@ const TextSection = () => {
       {/* Exceed Character Limit */}
       {warning && (
         <div className="w-full flex items-center gap-2 mt-2">
+          <img src={infoIcon} alt="Info" className="h-4" />
           <span className="text-[#fe8159] text-left block w-full">You Exceeded character Limit</span>
         </div>
       )}
