@@ -12,7 +12,7 @@ const TextSection = () => {
     <div className='w-full mt-12'>
       <textarea
         placeholder='Start typing here... (or paste your text)'
-        className='w-full h-50 border-[2px] outline-none border-[var(--text-area-border)] focus:border-[#d3a0fa] focus:shadow-[0_0_10px_0_#d3a0fa] resize-none text-xl/8 text-[var(--color-text-area)] bg-[var(--bg-text-area)] p-5 rounded-xl'
+        className='w-full h-50 border-[2px] outline-none border-[var(--text-area-border)] hover:bg-[var(--text-area-border)] focus:border-[#d3a0fa] focus:shadow-[0_0_10px_0_#d3a0fa] resize-none text-xl/8 text-[var(--color-text-area)] bg-[var(--bg-text-area)] p-5 rounded-xl'
         onChange={(e) => setText(e.target.value)}
         value={text}
       ></textarea>
@@ -34,7 +34,7 @@ const TextSection = () => {
               <input 
                 type="checkbox" 
                 id="exclude" 
-                className="mr-3 appearance-none w-4 h-4 rounded-sm checked:bg-neutral-500 border border-[var(--color-secondary-text)] cursor-pointer"
+                className="mr-3 appearance-none w-4 h-4 checked:bg-[url('src/assets/images/icon-check.svg')] checked:bg-[#d3a0fa] bg-no-repeat bg-center bg-contain rounded-sm border border-[var(--color-secondary-text)] checked:border-[#d3a0fa] cursor-pointer"
                 checked={isExcludeSpace}
                 onChange={() => setIsExcludeSpace(prev => !prev)}
               />
@@ -48,7 +48,7 @@ const TextSection = () => {
               <input 
                 type="checkbox" 
                 id="char_limit" 
-                className="mr-3 appearance-none w-4 h-4 rounded-sm  border border-[var(--color-secondary-text)] checked:bg-neutral-500 border cursor-pointer"
+                className="mr-3 appearance-none w-4 h-4 checked:bg-[url('src/assets/images/icon-check.svg')] checked:bg-[#d3a0fa] bg-no-repeat bg-center bg-contain rounded-sm border border-[var(--color-secondary-text)] checked:border-[#d3a0fa] cursor-pointer"
                 checked={charLimit.state}
                 onChange={() => setCharLimit(prev => ({ ...prev, state: !prev.state}))}
               />

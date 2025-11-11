@@ -26,7 +26,7 @@ const StatsSection = () => {
               }}
             >
               <p className="text-6xl sm:text-7xl font-bold mb-2">{stat.value}</p>
-              <p className="text-lg">{stat.title}</p>
+              <p className="text-lg font-medium">{stat.title}</p>
             </li>
           ))
         }
